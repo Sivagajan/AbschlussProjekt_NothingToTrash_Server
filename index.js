@@ -4,6 +4,7 @@ import cors from 'cors'
 import morgan from 'morgan'
 
 import {router as userRouter} from './router/userRouter.js'
+import { verifyBearer } from './controller/authController.js'
 
 const PORT = process.env.PORT
 const app = express()
@@ -13,5 +14,6 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/login', userRouter)
+app.use('/api/verify', verifyBearer)
 
 app.listen(PORT, ()=> console.log('NothingToTrash even the PORT is reusable', PORT))
