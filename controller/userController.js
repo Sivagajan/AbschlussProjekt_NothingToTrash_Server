@@ -1,5 +1,5 @@
 import { config } from "dotenv"
-import { userLoginService } from "../services/userService.js"
+import { userLoginService, addUserService } from "../services/userService.js"
 import { createToken } from "../util/token.js"
 
 export const userLoginController = async (req, res) => {
