@@ -1,5 +1,5 @@
 import { json } from "express"
-import { addArticleService, updateArticleService } from "../services/articleService"
+import { addArticleService, getAllArticlesService, getArticleService, updateArticleService } from "../services/articleService"
 
 
 export const addArticleController = async (req,res) => {
@@ -11,6 +11,7 @@ export const addArticleController = async (req,res) => {
 
         res.status(200).json(adding)
     }catch(error){
+        console.log(error)
         res.status(500).json({state : false})
     }
 }
@@ -38,7 +39,34 @@ export const updateArticleController = async (req, res) => {
         res.status(200).json({state : true})
 
     }catch(error){
+        console.log(error)
         res.status(500).json({state : false})
     }
 }
 
+export const getAllArticlesController = async (req, res) => {
+
+    try {
+        const result = await getAllArticlesService()
+        res.status(200).json(result)
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({state: false})
+    }
+}
+
+export const getArticleController = async (req,res) => {
+
+    console.log(req.params.id)
+    const id = req.params.id
+
+    try {
+        const result = await getArticleService(id)
+        res.status(200).json(result)
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({state:false})
+    }
+}
