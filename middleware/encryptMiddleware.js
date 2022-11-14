@@ -1,4 +1,4 @@
-import {createHmac} from 'crypto'
+import { createHmac } from 'crypto'
 
 export const encrypt = (req, _, next) =>{
 
