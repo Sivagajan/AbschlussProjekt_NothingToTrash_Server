@@ -10,7 +10,7 @@ export const userLoginService = async (user) => {
     console.log('uLS',user.username)
 
     const result = await db.collection(COL).findOne({username: user.username})
-    console.log('uLS',result.username)
+    console.log('uLS',result)
 
     return result
 }
