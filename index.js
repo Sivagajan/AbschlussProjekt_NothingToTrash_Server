@@ -15,7 +15,7 @@ app.use(morgan('dev'))
 app.use(cors())
 app.use(express.json())
 
-app.use('/user/login',encrypt ,userLoginController)
+app.post('/user/login',userLoginController)
 app.use('/article', articleRouter)
 
 app.listen(PORT, ()=> console.log('NothingToTrash even the PORT is reusable', PORT))
