@@ -1,9 +1,9 @@
 import express from 'express'
-import { addArticleController, updateArticleController, getAllArticlesController, getArticleController} from '../controller/articleController'
-import { checkToken } from '../middleware/verifyMiddleware'
-export const router = new express.Router()
+import { addArticleController, updateArticleController, getAllArticlesController, getArticleController} from '../controller/articleController.js'
+import { checkToken } from '../middleware/verifyMiddleware.js'
 
-const router = new express.Router()
+
+export const router = new express.Router()
 
 router.get('/',getAllArticlesController)
 router.get('/article',getArticleController)

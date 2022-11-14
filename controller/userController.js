@@ -1,11 +1,11 @@
-import { config } from "dotenv"
-import { userLoginService, addUserService, getUser } from "../services/userService.js"
+import { userLoginService, addUserService, getUserService } from "../services/userService.js"
 import { createToken } from "../util/token.js"
 
 export const userLoginController = async (req, res) => {
+    
     const user = req.body
 
-    console.log(user)
+    console.log('uLC',user)
 
     const result = await userLoginService(user)
 
@@ -19,11 +19,12 @@ export const userLoginController = async (req, res) => {
 
 export const getUserController = async (req,res) => {
 
-    console.log(req.params.id)
-    const id = req.params.id
+    console.log('guC',req.body.id)
+    const id = req.body.id
 
     try{
         const result = await getUserService(id)
+        console.log('guC',result)
         res.status(200).json(result)
 
     }catch(error){

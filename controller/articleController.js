@@ -1,5 +1,4 @@
-import { json } from "express"
-import { addArticleService, getAllArticlesService, getArticleService, updateArticleService } from "../services/articleService"
+import { addArticleService, getAllArticlesService, getArticleService, updateArticleService } from "../services/articleService.js"
 
 
 export const addArticleController = async (req,res) => {

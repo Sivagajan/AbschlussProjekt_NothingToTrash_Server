@@ -1,8 +1,8 @@
 import { ObjectId } from "mongodb"
-import { getDB } from "../util/db"
+import { getDB } from "../util/db.js"
 
 
-COL = 'article'
+const COL = 'article'
 
 export const addArticleService = async (article) => {
 
