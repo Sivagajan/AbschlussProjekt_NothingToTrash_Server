@@ -5,6 +5,7 @@ import morgan from 'morgan'
 
 import {router as articleRouter} from './router/articleRouter.js'
 import {router as userRouter} from './router/userRouter.js'
+import { verifyBearer } from './controller/authController.js'
 import { userLoginController } from './controller/userController.js'
 import { encrypt } from './middleware/encryptMiddleware.js'
 
