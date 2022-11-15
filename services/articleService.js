@@ -23,8 +23,8 @@ export const updateArticleService = async (id,article) => {
 
 export const getAllArticlesService = async () => {
 
-    const db = getDB()
-    const result = db.collection(COL).find().toArray()
+    const db = await getDB()
+    const result = await db.collection(COL).find().toArray()
     return result
 
 }

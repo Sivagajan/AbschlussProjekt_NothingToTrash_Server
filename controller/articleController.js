@@ -8,7 +8,7 @@ export const addArticleController = async (req,res) => {
         const add = await addArticleService(article)
         console.log(add)
 
-        res.status(200).json(adding)
+        res.status(200).json(add)
     }catch(error){
         console.log(error)
         res.status(500).json({state : false})
