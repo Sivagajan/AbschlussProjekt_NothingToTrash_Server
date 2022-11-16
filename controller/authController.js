@@ -4,8 +4,8 @@ export const verifyBearer = (req, res) => {
     try {
         const token = req.headers.authentication.split(" ")[1]
         const result = verifyToken(token)
-        console.log(result);
-        res.status(200).json({ state: true })
+        console.log('token',result);
+        res.status(200).json({ state: true , result})
 
     } catch (error) {
         console.log(error);

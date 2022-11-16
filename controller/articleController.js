@@ -5,6 +5,7 @@ export const addArticleController = async (req,res) => {
 
     try{
         const article = req.body
+        console.log('ADDArticle',article)
         const add = await addArticleService(article)
         console.log(add)
 
