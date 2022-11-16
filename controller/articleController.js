@@ -57,8 +57,8 @@ export const getAllArticlesController = async (req, res) => {
 
 export const getArticleController = async (req,res) => {
 
-    console.log(req.params.id)
-    const id = req.params.id
+    console.log(req.body.id)
+    const id = req.body.id
 
     try {
         const result = await getArticleService(id)

@@ -31,7 +31,9 @@ export const getAllArticlesService = async () => {
 
 export const getArticleService = async (id) => {
 
-    const db = getDB()
-    const result = db.collection(COL).findOne({_id: new ObjectId(id)})
+    console.log('gAS',id)
+
+    const db = await getDB()
+    const result = await db.collection(COL).findOne({_id: new ObjectId(id)})
     return result
 }
