@@ -19,20 +19,11 @@ export const addArticleController = async (req,res) => {
 export const updateArticleController = async (req, res) => {
 
     try{
-        const id = req.body.id
+        const id = req.body._id
 
-        const article = {
-            offerTyp : req.body.offer,
-            delivery : req.body.delivery,
-            title : req.body.title,
-            description : req.body.description,
-            amount : req.body.amount,
-            price : req.body.price,
-            priceTyp : req.body.priceTyp,
-            pic : req.body.pic,
-            category : req.body.category,
-            user : req.body.user
-        }
+        const article = req.body
+
+        console.log('UAC',article,id)
 
         const result = await updateArticleService(id,article)
         console.log('AddArticle',result)

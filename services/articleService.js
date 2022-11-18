@@ -15,8 +15,11 @@ export const addArticleService = async (article) => {
 
 export const updateArticleService = async (id,article) => {
     
+    delete article._id
+    console.log('gAS',id)
+
     const db = await getDB()
-    const result = await db.collection(COL).updateOne({_id : new ObjectId(id)},{$set : {article}})
+    const result = await db.collection(COL).updateOne({_id : new ObjectId(id)},{$set : {...article}})
 
     return result
 }
