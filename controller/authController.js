@@ -5,7 +5,7 @@ export const verifyBearer = (req, res) => {
         const token = req.headers.authentication.split(" ")[1]
         const result = verifyToken(token)
         console.log(result);
-        res.status(200).json({ state: true })
+        res.status(200).json({ state: true , result})
 
     } catch (error) {
         console.log(error);
